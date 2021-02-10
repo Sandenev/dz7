@@ -1,0 +1,12 @@
+version:latest
+services:
+  mvn:
+    build: mvn
+    links:
+      - tmc
+  tmc:
+    build: tommycat
+    links:
+      - mvn
+    ports:
+    - "8888:8080"
